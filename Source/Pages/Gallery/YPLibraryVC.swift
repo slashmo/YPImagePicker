@@ -65,6 +65,11 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         v.assetViewContainer.multipleSelectionButton.isHidden = !(YPConfig.library.maxNumberOfItems > 1)
         v.maxNumberWarningLabel.text = String(format: YPConfig.wordings.warningMaxItemsLimit, YPConfig.library.maxNumberOfItems)
 
+        if let preselectedAsset = preselectedItems?.last?.asset, mediaManager.fetchResult.contains(preselectedAsset) {
+            currentlySelectedIndex = mediaManager.fetchResult.index(of: preselectedAsset)
+            changeAsset(preselectedAsset)
+        }
+
         if let items = preselectedItems {
             selection = items.compactMap { item -> YPLibrarySelection? in
                 var itemAsset: PHAsset?

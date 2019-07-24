@@ -48,6 +48,15 @@ public class YPMediaVideo {
 public enum YPMediaItem {
     case photo(p: YPMediaPhoto)
     case video(v: YPMediaVideo)
+
+    public var asset: PHAsset? {
+        switch self {
+        case let .photo(photo):
+            return photo.asset
+        case let .video(video):
+            return video.asset
+        }
+    }
 }
 
 // MARK: - Compression
