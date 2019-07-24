@@ -34,7 +34,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setAlbum(_ album: YPAlbum) {
         title = album.title
         mediaManager.collection = album.collection
@@ -87,6 +87,15 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
             multipleSelectionEnabled = selection.count > 1
             v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
             v.collectionView.reloadData()
+
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.v.collectionView.scrollToItem(
+                    at: IndexPath(item: self.currentlySelectedIndex, section: 0),
+                    at: .top,
+                    animated: false
+                )
+            }
         }
     }
     
