@@ -35,7 +35,7 @@ open class YPPickerVC: YPBottomPager, YPBottomPagerDelegate {
         case video
     }
 
-    var preselectedItems: [YPMediaItem]?
+    public var preselectedItems: [YPMediaItem]?
     private var libraryVC: YPLibraryVC?
     private var cameraVC: YPCameraVC?
     private var videoVC: YPVideoCaptureVC?
