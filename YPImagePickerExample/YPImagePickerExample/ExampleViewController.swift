@@ -169,7 +169,7 @@ class ExampleViewController: UIViewController {
         //
         //config.library.options = options
 
-        let picker = YPImagePicker(configuration: config)
+        let picker = YPImagePicker(configuration: config, preselectedItems: selectedItems)
 
         /* Change configuration directly */
         // YPImagePickerConfiguration.shared.wordings.libraryTitle = "Gallery2"
