@@ -96,7 +96,7 @@ class YPAssetViewContainer: UIView {
     
     
     public func refreshSquareCropButton() {
-        if onlySquare {
+        if onlySquare || !YPConfig.showsSquareCrop {
             squareCropButton.isHidden = true
         } else {
             if let image = zoomableView?.assetImageView.image {
