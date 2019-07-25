@@ -28,9 +28,11 @@ class YPAssetViewContainer: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        addSubview(grid)
-        grid.frame = frame
+
+        if YPConfig.library.showsGrid {
+            addSubview(grid)
+            grid.frame = frame
+        }
         clipsToBounds = true
         
         for sv in subviews {
@@ -96,7 +98,7 @@ class YPAssetViewContainer: UIView {
     
     
     public func refreshSquareCropButton() {
-        if onlySquare || !YPConfig.showsSquareCrop {
+        if onlySquare || !YPConfig.library.showsSquareCrop {
             squareCropButton.isHidden = true
         } else {
             if let image = zoomableView?.assetImageView.image {

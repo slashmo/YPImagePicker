@@ -67,9 +67,6 @@ public struct YPImagePickerConfiguration {
 
     /// Adds a Crop step in the photo taking process, after filters.  Defaults to .none
     public var showsCrop: YPCropType = .none
-
-    /// Adds a square crop button on top of the currently selected image. Defaults to true
-    public var showsSquareCrop: Bool = true
     
     /// Ex: cappedTo:1024 will make sure images from the library or the camera will be
     /// resized to fit in a 1024x1024 box. Defaults to original image size.
@@ -189,6 +186,12 @@ public struct YPConfigLibrary {
 
     /// Allow to skip the selections gallery when selecting the multiple media items. Defaults to false.
     public var skipSelectionsGallery = false
+
+    /// Adds a square crop button on top of the currently selected image. Defaults to true
+    public var showsSquareCrop: Bool = true
+
+    /// Adds a grid layer on top of the currently selected image. Defaults to true
+    public var showsGrid: Bool = true
 }
 
 /// Encapsulates video specific settings.
