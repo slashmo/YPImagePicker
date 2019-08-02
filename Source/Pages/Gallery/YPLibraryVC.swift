@@ -70,7 +70,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
             changeAsset(preselectedAsset)
         }
 
-        if let items = preselectedItems {
+        if let items = preselectedItems, !items.isEmpty {
             selection = items.compactMap { item -> YPLibrarySelection? in
                 var itemAsset: PHAsset?
                 switch item {
