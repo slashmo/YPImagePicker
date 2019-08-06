@@ -125,9 +125,9 @@ class ExampleViewController: UIViewController {
         config.video.libraryTimeLimit = 500.0
 
         /* Adds a Crop step in the photo taking process, after filters. Defaults to .none */
-        config.showsCrop = .rectangle(ratio: (16/9))
+//        config.showsCrop = .rectangle(ratio: (16/9))
 
-        config.library.showsSquareCrop = false
+        config.library.showsSquareCrop = true
         config.library.showsGrid = false
 
         /* Defines the overlay view for the camera. Defaults to UIView(). */
