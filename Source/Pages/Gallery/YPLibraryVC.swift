@@ -167,7 +167,8 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
     @objc
     func multipleSelectionButtonTapped() {
-        
+		guard mediaManager.fetchResult != nil else { return }
+		
         if !multipleSelectionEnabled {
             selection.removeAll()
         }
@@ -189,7 +190,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                                        scrollViewZoomScale: v.assetZoomableView!.zoomScale,
                                        assetIdentifier: asset.localIdentifier)
                 ]
-            }
+			}
         } else {
             selection.removeAll()
             addToSelection(indexPath: IndexPath(row: currentlySelectedIndex, section: 0))
