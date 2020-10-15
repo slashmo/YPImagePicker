@@ -86,6 +86,12 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if YPConfig.library.defaultMultipleSelection || selection.count > 1 {
             showMultipleSelection()
         }
+        // guard mediaManager.hasResultItems else {
+        //     return
+        // }
+        // if YPConfig.library.defaultMultipleSelection || selection.count > 1 {
+        //     showMultipleSelection()
+        // }
     }
     
     // MARK: - View Lifecycle
